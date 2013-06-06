@@ -1,6 +1,6 @@
 # # Laravel-france - kit de démarrage français
 
-Le kit de démarrage laravel-france vous aidera à débuter avec Laravel 4, 
+Le kit de démarrage laravel-france vous aidera à débuter avec Laravel 4,
 avec les bases d'une application en français.
 
 -----
@@ -52,7 +52,7 @@ composer installation
 
 -----
 
-# # # 3) configuration de la base de données 
+# # # 3) configuration de la base de données
 
 Une fois le kit de démarrage cloné et toutes les dépendances installées, vous devez créer une base de données et mettre à jour le fichier `app / config / database.php`.
 
@@ -72,7 +72,7 @@ Maintenant, vous devez créer vous-même un utilisateur et terminer l'installati
 
 Utilisez la commande suivante pour créer vos utilisateurs, groupes d'utilisateurs et exécuter automatiquement toutes les migrations nécessaires.
 
-php app artisan: installer
+php artisan app:install
 
 -----
 
@@ -82,8 +82,8 @@ php app artisan: installer
 
 > Copyright (C) 2013 C.Carpentier <carpentier-christophe@hotmail.fr>
 
-Ce programme est un logiciel libre ; 
+Ce programme est un logiciel libre ;
 
-Vous pouvez le redistribuer ou le modifier suivant les termes de la GNU General Public License telle que publiée par la Free Software Foundation; 
+Vous pouvez le redistribuer ou le modifier suivant les termes de la GNU General Public License telle que publiée par la Free Software Foundation;
 
 Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE ;
