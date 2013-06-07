@@ -48,7 +48,7 @@ php composer.phar installation
 ####2.2) si Composer est installé
 
 cd-votre dossier
-composer installation
+composer install
 
 -----
 
@@ -72,7 +72,7 @@ Maintenant, vous devez créer vous-même un utilisateur et terminer l'installati
 
 Utilisez la commande suivante pour créer vos utilisateurs, groupes d'utilisateurs et exécuter automatiquement toutes les migrations nécessaires.
 
-php app artisan: installer
+php artisan app:installer
 
 -----
 
