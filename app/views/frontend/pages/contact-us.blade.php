@@ -30,8 +30,8 @@
 			<input type="text" id="email" name="email" class="input-block-level" placeholder="{{Lang::get('frontend/pages.contact-us.email')}}">
 			{{ $errors->first('email', '<span class="help-block">:message</span>') }}
 		</div>
-		<!-- Message -->
-		<div  class="control-group{{ $errors->first('message', ' error') }}">
+		<!-- Content -->
+		<div  class="control-group{{ $errors->first('content', ' error') }}">
 			<textarea rows="4" id="content" name="content" class="input-block-level" placeholder="{{Lang::get('frontend/pages.contact-us.message')}}"></textarea>
 			{{ $errors->first('content', '<span class="help-block">:message</span>') }}
 		</div>
