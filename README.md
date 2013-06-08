@@ -80,12 +80,13 @@ Utilisez la commande suivante pour créer vos utilisateurs, groupes d'utilisateu
 
 ##LICENCE
 
-> Version 0.0.2, juin 2013
+The MIT License (MIT)
 
-> Copyright (C) 2013 C.Carpentier <carpentier-christophe@hotmail.fr>
+Copyright (c) 2013 - laravel.fr
 
 Ce programme est un logiciel libre ; 
 
-Vous pouvez le redistribuer ou le modifier suivant les termes de la GNU General Public License telle que publiée par la Free Software Foundation; 
+Vous pouvez le redistribuer ou le modifier suivant les termes de la licence MIT - 
+http://opensource.org/licenses/MIT
 
 Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE ;
