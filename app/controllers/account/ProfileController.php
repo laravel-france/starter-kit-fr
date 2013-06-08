@@ -1,7 +1,7 @@
 <?php namespace Controllers\Account;
 
 # Traduction Laravel-france
-# Maj:2/05/2013 - frontend.php
+# Maj:8/06/2013 - controllers/account/ProfileController.php
 
 use AuthorizedController;
 use Input;
@@ -63,9 +63,9 @@ class ProfileController extends AuthorizedController {
 		$user->gravatar   = Input::get('gravatar');
 		$user->save();
 
-		// Redirect to the settings page		
-		return Redirect::route('profile')->with('success', Lang::get('messages.account.profile.success'));
-		
+		// Redirect to the settings page
+		return Redirect::route('profile')->with('success', Lang::get('backend/account/messages.success.profile'));
+
 	}
 
 }

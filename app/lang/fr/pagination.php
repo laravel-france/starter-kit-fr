@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return array(
 
@@ -22,9 +22,9 @@ return array(
 
     #views/paginator/slider
     'slider'   => array (
-        'showing' => 'Afficher',
+        'showing' => 'Affichage',
         'of'      => 'sur',
-        'items'   => 'éléments'
+        'items'   => 'élément|éléments'
     )
 
 );

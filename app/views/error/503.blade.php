@@ -1,11 +1,11 @@
 @extends('error/layouts/defaut')
 
 <!-- Traduction Laravel-france  -->
-<!-- Maj:2/05/2013 - frontend.php -->
+<!-- Maj:7/06/2013 - 503.php -->
 
 {{-- Page title --}}
 @section('title')
-{{Lang::get('error.503.page-title')}}
+{{Lang::get('error.503.title')}}
 @stop
 
 {{-- Error page content --}}
@@ -13,7 +13,7 @@
 	<div class="wrapper">
 		<div class="error-spacer"></div>
 		<div role="main" class="main">
-			<h1>{{Lang::get('error.503.error-title')}}</h1>
+			<h1>{{Lang::get('error.503.description')}}</h1>
 
 			<h2>{{Lang::get('error.503.error')}}</h2>
 

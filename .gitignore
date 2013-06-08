@@ -1,0 +1,6 @@
+app/config
+app/storage
+bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock

@@ -14,7 +14,7 @@
 		<?php echo $paginator->getTo(); ?>
 		<?php echo Lang::get('pagination.slider.of') ?>
 		<?php echo $paginator->getTotal(); ?>
-		<?php echo Lang::get('pagination.slider.items') ?>
+		<?php echo Lang::choice('pagination.slider.items', $paginator->getTotal()) ?>
 		</li>
 	</ul>
 
