@@ -9,7 +9,7 @@ class ContactUsController extends BaseController {
 	 */
 	public function getIndex()
 	{
-		return View::make('frontend/contact-us');
+		return View::make('frontend/pages/contact-us');
 	}
 
 	/**
@@ -23,7 +23,7 @@ class ContactUsController extends BaseController {
 		$rules = array(
 			'name'        => 'required',
 			'email'       => 'required|email',
-			'description' => 'required',
+			'message' => 'required',
 		);
 
 		// Create a new validator instance from our validation rules

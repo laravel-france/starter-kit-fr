@@ -1,7 +1,7 @@
 <?php namespace Controllers\Account;
 
 # Traduction Laravel-france
-# Maj:2/05/2013 - messages.php
+# Maj:8/06/2013 - controllers/account/ChangeEmailController.php
 
 use AuthorizedController;
 use Input;
@@ -58,7 +58,7 @@ class ChangeEmailController extends AuthorizedController {
 		if ( ! $user->checkPassword(Input::get('current_password')))
 		{
 			// Set the error message
-			$this->messageBag->add('current_password', Lang::get('messages.account.change-email.error'));
+			$this->messageBag->add('current_password', Lang::get('backend/account/messages.error.change-email'));
 
 			// Redirect to the change email page
 			return Redirect::route('change-email')->withErrors($this->messageBag);
@@ -69,7 +69,7 @@ class ChangeEmailController extends AuthorizedController {
 		$user->save();
 
 		// Redirect to the settings page
-		return Redirect::route('change-email')->with('success', Lang::get('messages.account.change-email.success'));
+		return Redirect::route('change-email')->with('success', Lang::get('backend/account/messages.success.change-email'));
 	}
 
 }

@@ -12,19 +12,6 @@
 Route::group(array('prefix' => 'admin'), function()
 {
 
-	# Blog Management
-	/* Route::group(array('prefix' => 'blogs'), function()
-	{
-		Route::get('/', array('as' => 'blogs', 'uses' => 'Controllers\Admin\BlogsController@getIndex'));
-		Route::get('create', array('as' => 'create/blog', 'uses' => 'Controllers\Admin\BlogsController@getCreate'));
-		Route::post('create', 'Controllers\Admin\BlogsController@postCreate');
-		Route::get('{blogId}/edit', array('as' => 'update/blog', 'uses' => 'Controllers\Admin\BlogsController@getEdit'));
-		Route::post('{blogId}/edit', 'Controllers\Admin\BlogsController@postEdit');
-		Route::get('{blogId}/delete', array('as' => 'delete/blog', 'uses' => 'Controllers\Admin\BlogsController@getDelete'));
-		Route::get('{blogId}/restore', array('as' => 'restore/blog', 'uses' => 'Controllers\Admin\BlogsController@getRestore'));
-	});
-	*/
-
 	# User Management
 	Route::group(array('prefix' => 'users'), function()
 	{
@@ -133,22 +120,16 @@ Route::group(array('prefix' => 'account'), function()
 Route::get('about-us', function()
 {
 	//
-	return View::make('frontend/about-us');
+	return View::make('frontend/pages/about-us');
 });
 
 Route::get('contact-us', array('as' => 'contact-us', 'uses' => 'ContactUsController@getIndex'));
 Route::post('contact-us', 'ContactUsController@postIndex');
 
-/*
-Route::get('blog/{postSlug}', array('as' => 'view-post', 'uses' => 'BlogController@getView'));
-Route::post('blog/{postSlug}', 'BlogController@postView');
-*/
-
-//Route::get('/', array('as' => 'home', 'uses' => 'BlogController@getIndex'));
 Route::get('/', array('as' => 'home', function()
 {
     //
-    return View::make('frontend/welcome');
+    return View::make('frontend/pages/home');
 }));
 
 // routes de test 403,404,500
