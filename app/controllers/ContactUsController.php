@@ -34,7 +34,8 @@ class ContactUsController extends BaseController {
 		{
 			return Redirect::route('contact-us')->withErrors($validator);
 		}
-
+		
+		// Test de presence de l'email de l'administrateur dans la config
 		if(!isset(Config::get('mail.from')['address']))
 		{
 			Session::flash('warning', 'Désolé mais il y a un problème de messagerie, veuillez en informer l\'administrateur du site');
