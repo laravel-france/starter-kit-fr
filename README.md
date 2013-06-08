@@ -94,7 +94,7 @@ Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GAR
 -----
 
 ##CONTRIBUTEURS
-*Carpentier-Christophe
-*AoSix
-*Bestmomo
-*Tamplan
+* Carpentier-Christophe
+* AoSix
+* Bestmomo
+* Tamplan
