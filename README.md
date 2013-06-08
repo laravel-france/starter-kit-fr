@@ -43,7 +43,7 @@ Deux choix s'offrent à vous :
 ###2) installer les dépendances via Composer
 ####2.1) Si vous n'avez pas installé Composer
 
-    cd-votre dossier
+    cd votreDossier
     curl http://getcomposer.org/installer | php
     php composer.phar install
 
