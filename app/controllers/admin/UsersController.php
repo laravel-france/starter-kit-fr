@@ -124,29 +124,29 @@ class UsersController extends AdminController {
 				}
 
 				// Prepare the success message
-				$success = Lang::get('messages.admin.users.success.create');
+				$success = Lang::get('backend/users/messages.success.created');
 
 				// Redirect to the new user page
 				return Redirect::route('update/user', $user->id)->with('success', $success);
 			}
 
 			// Prepare the error message
-			$error = Lang::get('messages.admin.users.error.create');
+			$error = Lang::get('backend/users/messages.error.created');
 
 			// Redirect to the user creation page
 			return Redirect::route('create/user')->with('error', $error);
 		}
 		catch (LoginRequiredException $e)
 		{
-			$error = Lang::get('messages.admin.users..user_login_required');
+			$error = Lang::get('backend/users/messages.user_login_required');
 		}
 		catch (PasswordRequiredException $e)
 		{
-			$error = Lang::get('messages.admin.users..user_password_required');
+			$error = Lang::get('backend/users/messages.user_password_required');
 		}
 		catch (UserExistsException $e)
 		{
-			$error = Lang::get('messages.admin.users..user_exists');
+			$error = Lang::get('backend/users/messages.user_exists');
 		}
 
 		// Redirect to the user creation page
@@ -183,7 +183,7 @@ class UsersController extends AdminController {
 		catch (UserNotFoundException $e)
 		{
 			// Prepare the error message
-			$error = Lang::get('messages.admin.users.user_not_found', compact('id'));
+			$error = Lang::get('backend/users/messages.user_not_found', compact('id'));
 
 			// Redirect to the user management page
 			return Redirect::route('users')->with('error', $error);
@@ -215,7 +215,7 @@ class UsersController extends AdminController {
 		catch (UserNotFoundException $e)
 		{
 			// Prepare the error message
-			$error = Lang::get('messages.admin.users.user_not_found', compact('id'));
+			$error = Lang::get('backend/users/messages.user_not_found', compact('id'));
 
 			// Redirect to the user management page
 			return Redirect::route('users')->with('error', $error);
@@ -289,18 +289,18 @@ class UsersController extends AdminController {
 			if ($user->save())
 			{
 				// Prepare the success message
-				$success = Lang::get('messages.admin.users.success.update');
+				$success = Lang::get('backend/users/messages.success.updated');
 
 				// Redirect to the user page
 				return Redirect::route('update/user', $id)->with('success', $success);
 			}
 
 			// Prepare the error message
-			$error = Lang::get('messages.admin.users.error.update');
+			$error = Lang::get('backend/users/messages.updated');
 		}
 		catch (LoginRequiredException $e)
 		{
-			$error = Lang::get('messages.admin.users.user_login_required');
+			$error = Lang::get('backend/users/messages.user_login_required');
 		}
 
 		// Redirect to the user page
@@ -324,7 +324,7 @@ class UsersController extends AdminController {
 			if ($user->id === Sentry::getId())
 			{
 				// Prepare the error message
-				$error = Lang::get('messages.admin.users.error.delete');
+				$error = Lang::get('backend/users/messages.error.deleted');
 
 				// Redirect to the user management page
 				return Redirect::route('users')->with('error', $error);
@@ -334,14 +334,14 @@ class UsersController extends AdminController {
 			if ($user->isSuperUser() and ! Sentry::getUser()->isSuperUser())
 			{
 				// Redirect to the user management page
-				return Redirect::route('users')->with('error', 'Insufficient permissions!');
+				return Redirect::route('users')->with('error', 'backend/users/messages.insufficient_permissions');
 			}
 
 			// Delete the user
 			$user->delete();
 
 			// Prepare the success message
-			$success = Lang::get('messages.admin.users.success.delete');
+			$success = Lang::get('backend/users/messages.success.deleted');
 
 			// Redirect to the user management page
 			return Redirect::route('users')->with('success', $success);
@@ -349,7 +349,7 @@ class UsersController extends AdminController {
 		catch (UserNotFoundException $e)
 		{
 			// Prepare the error message
-			$error = Lang::get('messages.admin.users.user_not_found', compact('id' ));
+			$error = Lang::get('backend/users/messages.user_not_found', compact('id' ));
 
 			// Redirect to the user management page
 			return Redirect::route('users')->with('error', $error);
@@ -373,7 +373,7 @@ class UsersController extends AdminController {
 			$user->restore();
 
 			// Prepare the success message
-			$success = Lang::get('messages.admin.users.success.restored');
+			$success = Lang::get('backend/users/messages.success.restored');
 
 			// Redirect to the user management page
 			return Redirect::route('users')->with('success', $success);
@@ -381,7 +381,7 @@ class UsersController extends AdminController {
 		catch (UserNotFoundException $e)
 		{
 			// Prepare the error message
-			$error = Lang::get('messages.admin.users.user_not_found', compact('id'));
+			$error = Lang::get('backend/users/messages.user_not_found', compact('id'));
 
 			// Redirect to the user management page
 			return Redirect::route('users')->with('error', $error);

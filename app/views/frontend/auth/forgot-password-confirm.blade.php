@@ -5,7 +5,7 @@
 
 {{-- Page title --}}
 @section('title')
-	<h3>{{Lang::get('frontend.auth.forgot-password-confirm.section-title')}}</h3>
+{{Lang::get('frontend/auth/actions.forgot-password-confirm.title')}}
 Forgot Password ::
 @parent
 @stop
@@ -13,7 +13,7 @@ Forgot Password ::
 {{-- Page content --}}
 @section('content')
 <div class="page-header">
-	<h3>{{Lang::get('frontend.auth.forgot-password-confirm.page-title')}}</h3>
+	<h3>{{Lang::get('frontend/auth/actions.forgot-password-confirm.description')}}</h3>
 </div>
 <form method="post" action="" class="form-horizontal">
 	<!-- CSRF Token -->
@@ -21,7 +21,7 @@ Forgot Password ::
 
 	<!-- New Password -->
 	<div class="control-group{{ $errors->first('password', ' error') }}">
-		<label class="control-label" for="password">{{Lang::get('frontend.auth.forgot-password-confirm.new-password')}}</label>
+		<label class="control-label" for="password">{{Lang::get('frontend/auth/labels.new_password')}}</label>
 		<div class="controls">
 			<input type="password" name="password" id="password" value="{{ Input::old('password') }}" />
 			{{ $errors->first('password', '<span class="help-block">:message</span>') }}
@@ -30,7 +30,7 @@ Forgot Password ::
 
 	<!-- Password Confirm -->
 	<div class="control-group{{ $errors->first('password_confirm', ' error') }}">
-		<label class="control-label" for="password_confirm">{{Lang::get('frontend.auth.forgot-password-confirm.password-confirm')}}</label>
+		<label class="control-label" for="password_confirm">{{Lang::get('frontend/auth/labels.new_password_confirm')}}</label>
 		<div class="controls">
 			<input type="password" name="password_confirm" id="password_confirm" value="{{ Input::old('confirm-password') }}" />
 			{{ $errors->first('password_confirm', '<span class="help-block">:message</span>') }}
@@ -40,8 +40,8 @@ Forgot Password ::
 	<!-- Form actions -->
 	<div class="control-group">
 		<div class="controls">
-			<a class="btn" href="{{ route('home') }}">Cancel</a>
-			<button type="submit" class="btn btn-info">Submit</button>
+			<a class="btn btn-link" href="{{ route('home') }}">{{Lang::get('buttons.cancel')}}</a>
+			<button type="submit" class="btn btn-primary">{{Lang::get('frontend/auth/actions.buttons.forgot-password-confirm')}}</button>
 		</div>
 	</div>
 </form>

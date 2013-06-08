@@ -334,7 +334,7 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
     }
     public static function getBootstrapFile()
     {
-        return 'C:\\wamp\\www\\l4sk-bg-fr-0.0.1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
+        return 'C:\\wamp\\www\\starter-kit-fr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {
@@ -9926,7 +9926,7 @@ class PrettyPageHandler extends Handler
             return Handler::DONE;
         }
         if (!($resources = $this->getResourcesPath())) {
-            $resources = 'C:\\wamp\\www\\l4sk-bg-fr-0.0.1\\vendor\\filp\\whoops\\src\\Whoops\\Handler' . '/../Resources';
+            $resources = 'C:\\wamp\\www\\starter-kit-fr\\vendor\\filp\\whoops\\src\\Whoops\\Handler' . '/../Resources';
         }
         $templateFile = "{$resources}/pretty-template.php";
         $cssFile = "{$resources}/pretty-page.css";

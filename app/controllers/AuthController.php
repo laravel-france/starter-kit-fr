@@ -57,23 +57,23 @@ class AuthController extends BaseController {
 			Session::forget('loginRedirect');
 
 			// Redirect to the users page
-			return Redirect::to($redirect)->with('success', Lang::get('messages.auth.login.success'));
+			return Redirect::to($redirect)->with('success', Lang::get('frontend/auth/messages.success.login'));
 		}
 		catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 		{
-			$this->messageBag->add('email', Lang::get('messages.auth.account_not_found'));
+			$this->messageBag->add('email', Lang::get('frontend/auth/messages.account_not_found'));
 		}
 		catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
 		{
-			$this->messageBag->add('email', Lang::get('messages.auth.account_not_activated'));
+			$this->messageBag->add('email', Lang::get('frontend/auth/messages.account_not_activated'));
 		}
 		catch (Cartalyst\Sentry\Throttling\UserSuspendedException $e)
 		{
-			$this->messageBag->add('email', Lang::get('messages.auth.account_suspended'));
+			$this->messageBag->add('email', Lang::get('frontend/auth/messages.account_suspended'));
 		}
 		catch (Cartalyst\Sentry\Throttling\UserBannedException $e)
 		{
-			$this->messageBag->add('email', Lang::get('messages.auth.account_banned'));
+			$this->messageBag->add('email', Lang::get('frontend/auth/messages.account_banned'));
 		}
 
 		// Ooops.. something went wrong
@@ -94,7 +94,7 @@ class AuthController extends BaseController {
 		}
 
 		// Show the page
-		return View::make('frontend.auth.signup');
+		return View::make('frontend/auth/signup');
 	}
 
 	/**
@@ -148,11 +148,11 @@ class AuthController extends BaseController {
 			});
 
 			// Redirect to the register page
-			return Redirect::back()->with('success', Lang::get('messages.auth.signup.success'));
+			return Redirect::back()->with('success', Lang::get('frontend/auth/messages.success.register'));
 		}
 		catch (Cartalyst\Sentry\Users\UserExistsException $e)
 		{
-			$this->messageBag->add('email', Lang::get('messages.auth.account_already_exists'));
+			$this->messageBag->add('email', Lang::get('frontend/auth/messages.account_already_exists'));
 		}
 
 		// Ooops.. something went wrong
@@ -182,11 +182,11 @@ class AuthController extends BaseController {
 			if ($user->attemptActivation($activationCode))
 			{
 				// Redirect to the login page
-				return Redirect::route('signin')->with('success', Lang::get('messages.auth.activate.success'));
+				return Redirect::route('signin')->with('success', Lang::get('frontend/auth/messages.success.activate'));
 			}
 
 			// The activation failed.
-			$error = Lang::get('messages.auth.activate.error');
+			$error = Lang::get('frontend/auth/messages.error.activate');
 		}
 		catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 		{
@@ -205,7 +205,7 @@ class AuthController extends BaseController {
 	public function getForgotPassword()
 	{
 		// Show the page
-		return View::make('frontend.auth.forgot-password');
+		return View::make('frontend/auth/forgot-password');
 	}
 
 	/**
@@ -256,7 +256,7 @@ class AuthController extends BaseController {
 		}
 
 		//  Redirect to the forgot password
-		return Redirect::route('forgot-password')->with('success', Lang::get('messages.auth.forgot-password.success'));
+		return Redirect::route('forgot-password')->with('success', Lang::get('frontend/auth/messages.success.forgot-password'));
 	}
 
 	/**
@@ -275,11 +275,11 @@ class AuthController extends BaseController {
 		catch(Cartalyst\Sentry\Users\UserNotFoundException $e)
 		{
 			// Redirect to the forgot password page
-			return Redirect::route('forgot-password')->with('error', Lang::get('messages.auth.account_not_found'));
+			return Redirect::route('forgot-password')->with('error', Lang::get('frontend/auth/messages.account_not_found'));
 		}
 
 		// Show the page
-		return View::make('frontend.auth.forgot-password-confirm');
+		return View::make('frontend/auth/forgot-password-confirm');
 	}
 
 	/**
@@ -315,18 +315,18 @@ class AuthController extends BaseController {
 			if ($user->attemptResetPassword($passwordResetCode, Input::get('password')))
 			{
 				// Password successfully reseted
-				return Redirect::route('signin')->with('success', Lang::get('messages.auth.forgot-password-confirm.success'));
+				return Redirect::route('signin')->with('success', Lang::get('frontend/auth/messages.success.forgot-password-confirm'));
 			}
 			else
 			{
 				// Ooops.. something went wrong
-				return Redirect::route('signin')->with('error', Lang::get('messages.auth.forgot-password-confirm.error'));
+				return Redirect::route('signin')->with('error', Lang::get('frontend/auth/messages.error.forgot-password-confirm'));
 			}
 		}
 		catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 		{
 			// Redirect to the forgot password page
-			return Redirect::route('forgot-password')->with('error', Lang::get('messages.auth.account_not_found'));
+			return Redirect::route('forgot-password')->with('error', Lang::get('frontend/auth/messages.account_not_found'));
 		}
 	}
 
@@ -341,7 +341,7 @@ class AuthController extends BaseController {
 		Sentry::logout();
 
 		// Redirect to the users page
-		return Redirect::route('home')->with('success', Lang::get('messages.auth.logout.success'));
+		return Redirect::route('home')->with('success', Lang::get('frontend/auth/messages.success.logout'));
 	}
 
 }
