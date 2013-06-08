@@ -28,39 +28,41 @@ avec les bases d'une application en français.
 
 ###1) Téléchargement
 
+Deux choix s'offrent à vous :
+
 ####1.1) cloner le référentiel
 
-git clone https://github.com/laravel-france/starter-kit-fr votre-dossier
+    git clone https://github.com/laravel-france/starter-kit-fr votreDossier
 
 ####1.2) Télécharger le référentiel
 
-https://github.com/laravel-france/starter-kit-fr/archive/master.zip
+    https://github.com/laravel-france/starter-kit-fr/archive/master.zip
 
 -----
 
 ###2) installer les dépendances via Composer
 ####2.1) Si vous n'avez pas installé Composer
 
-cd-votre dossier
-curl-s http://getcomposer.org/installer | php
-php composer.phar installation
+    cd-votre dossier
+    curl http://getcomposer.org/installer | php
+    php composer.phar install
 
 ####2.2) si Composer est installé
 
-cd-votre dossier
-composer install
+    cd votreDossier
+    composer install
 
 -----
 
-###3) configuration de la base de données 
+###3) Configuration de la base de données 
 
-Une fois le kit de démarrage cloné et toutes les dépendances installées, vous devez créer une base de données et mettre à jour le fichier `app / config / database.php`.
+Une fois le kit de démarrage cloné et toutes les dépendances installées, vous devez créer une base de données et mettre à jour le fichier `app /config/database.php`.
 
 -----
 
 ###4) Paramètres de configuration de messagerie
 
-Maintenant, vous devez configurer vos paramètres de messagerie en modifiant le fichier suivant `app / config / mail.php`.
+Maintenant, vous devez configurer vos paramètres de messagerie en modifiant le fichier suivant `app/config/mail.php`.
 
 Ces paramètres seront utilisés pour envoyer des emails à vos utilisateurs lors de leur inscription et afin qu'ils puissent demander la réinitialisation de leur mot de passe.
 
@@ -72,7 +74,7 @@ Maintenant, vous devez créer vous-même un utilisateur et terminer l'installati
 
 Utilisez la commande suivante pour créer vos utilisateurs, groupes d'utilisateurs et exécuter automatiquement toutes les migrations nécessaires.
 
-php artisan app:installer
+    php artisan app:installer
 
 -----
 
