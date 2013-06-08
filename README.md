@@ -56,7 +56,7 @@ Deux choix s'offrent à vous :
 
 ###3) Configuration de la base de données 
 
-Une fois le kit de démarrage cloné et toutes les dépendances installées, vous devez créer une base de données et mettre à jour le fichier `app /config/database.php`.
+Une fois le kit de démarrage cloné et toutes les dépendances installées, vous devez créer une base de données et mettre à jour le fichier `app/config/database.php`.
 
 -----
 
@@ -90,3 +90,11 @@ Vous pouvez le redistribuer ou le modifier suivant les termes de la licence MIT 
 http://opensource.org/licenses/MIT
 
 Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE ;
+
+-----
+
+##CONTRIBUTEURS
+Carpentier-Christophe
+AoSix
+Bestmomo
+Tamplan
