@@ -34,8 +34,22 @@ class ContactUsController extends BaseController {
 		{
 			return Redirect::route('contact-us')->withErrors($validator);
 		}
+		
+		// Test de presence de l'email de l'administrateur dans la config
+		if(!isset(Config::get('mail.from')['address']))
+		{
+			Session::flash('warning', 'Désolé mais il y a un problème de messagerie, veuillez en informer l\'administrateur du site');
+			return Redirect::route('contact-us');
+		}
 
-		# TODO !
+	        // Mise en queue de l'email à l'administrateur
+	        Mail::queue('emails.contact', Input::all(), function($m)
+	        {
+	            	$m->to(Config::get('mail.from')['address'], 'Contact site')->subject('Contact sur le site');
+	        });
+	
+	        Session::flash('success', 'Votre message a bien été envoyé à l\'administrateur du site');
+	        return Redirect::home();
 	}
 
 }
