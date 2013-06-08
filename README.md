@@ -74,7 +74,7 @@ Maintenant, vous devez créer vous-même un utilisateur et terminer l'installati
 
 Utilisez la commande suivante pour créer vos utilisateurs, groupes d'utilisateurs et exécuter automatiquement toutes les migrations nécessaires.
 
-    php artisan app:installer
+    php artisan app:install
 
 -----
 
