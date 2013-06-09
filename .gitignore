@@ -1,6 +1,6 @@
 app/config
 app/storage
 bootstrap/compiled.php
-/vendor
+vendor
 composer.phar
 composer.lock
