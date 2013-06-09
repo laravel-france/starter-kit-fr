@@ -58,7 +58,7 @@ class ChangeEmailController extends AuthorizedController {
 		if ( ! $user->checkPassword(Input::get('current_password')))
 		{
 			// Set the error message
-			$this->messageBag->add('current_password', Lang::get('backend/account/messages.error.change-email'));
+			$this->messageBag->add('current_password', Lang::get('frontend/account/messages.error.email-changed'));
 
 			// Redirect to the change email page
 			return Redirect::route('change-email')->withErrors($this->messageBag);
@@ -69,7 +69,7 @@ class ChangeEmailController extends AuthorizedController {
 		$user->save();
 
 		// Redirect to the settings page
-		return Redirect::route('change-email')->with('success', Lang::get('backend/account/messages.success.change-email'));
+		return Redirect::route('change-email')->with('success', Lang::get('frontend/account/messages.success.email-changed'));
 	}
 
 }

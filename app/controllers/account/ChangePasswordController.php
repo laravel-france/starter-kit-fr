@@ -58,7 +58,7 @@ class ChangePasswordController extends AuthorizedController {
 		if ( ! $user->checkPassword(Input::get('old_password')))
 		{
 			// Set the error message
-			$this->messageBag->add('old_password', Lang::get('backend/account/messages.error.change-password'));
+			$this->messageBag->add('old_password', Lang::get('frontend/account/messages.error.password-changed'));
 
 			// Redirect to the change password page
 			return Redirect::route('change-password')->withErrors($this->messageBag);
@@ -69,7 +69,7 @@ class ChangePasswordController extends AuthorizedController {
 		$user->save();
 
 		// Redirect to the change-password page
-		return Redirect::route('change-password')->with('success', Lang::get('backend/account/messages.success.change-password'));
+		return Redirect::route('change-password')->with('success', Lang::get('frontend/account/messages.success.password-changed'));
 	}
 
 }
