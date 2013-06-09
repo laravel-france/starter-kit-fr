@@ -23,7 +23,7 @@ class ContactUsController extends BaseController {
 		$rules = array(
 			'name'        => 'required',
 			'email'       => 'required|email',
-			'message' => 'required',
+			'content'     => 'required',
 		);
 
 		// Create a new validator instance from our validation rules
