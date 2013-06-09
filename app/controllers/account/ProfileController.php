@@ -64,7 +64,7 @@ class ProfileController extends AuthorizedController {
 		$user->save();
 
 		// Redirect to the settings page
-		return Redirect::route('profile')->with('success', Lang::get('backend/account/messages.success.profile'));
+		return Redirect::route('profile')->with('success', Lang::get('frontend/account/messages.success.profile-changed'));
 
 	}
 
