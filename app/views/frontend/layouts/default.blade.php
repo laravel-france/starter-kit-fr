@@ -9,7 +9,7 @@
 		<meta charset="utf-8" />
 		<title>
 			@section('title') ::
-			{{Lang::get('commons.site-title')}}
+			{{Config::get('site.title')}}
 			@show
 		</title>
 		<meta name="keywords" content="your, awesome, keywords, here" />
@@ -51,48 +51,7 @@
 		<!-- Container -->
 		<div class="container">
 			<!-- Navbar -->
-			<div class="navbar navbar-inverse">
-				<div class="navbar-inner">
-					<div class="container">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-
-						<div class="nav-collapse collapse">
-							<ul class="nav">
-								<li {{ (Request::is('/') ? 'class="active"' : '') }}><a href="{{ route('home') }}"><i class="icon-home icon-white"></i> {{Lang::get('frontend/menu.home')}}</a></li>
-								<li {{ (Request::is('about-us') ? 'class="active"' : '') }}><a href="{{ URL::to('about-us') }}"><i class="icon-file icon-white"></i> {{Lang::get('frontend/menu.about-us')}}</a></li>
-								<li {{ (Request::is('contact-us') ? 'class="active"' : '') }}><a href="{{ URL::to('contact-us') }}"><i class="icon-file icon-white"></i> {{Lang::get('frontend/menu.contact-us')}}</a></li>
-							</ul>
-
-							<ul class="nav pull-right">
-								@if (Sentry::check())
-
-								<li class="dropdown{{ (Request::is('account*') ? ' active' : '') }}">
-									<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="{{ route('account') }}">
-										{{Lang::get('frontend/menu.user.welcome')}}{{Sentry::getUser()->first_name}}
-										<b class="caret"></b>
-									</a>
-									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-										@if(Sentry::getUser()->hasAccess('admin'))
-										<li><a href="{{ route('admin') }}"><i class="icon-cog"></i> {{Lang::get('frontend/menu.user.submenus.admin')}}</a></li>
-										@endif
-										<li{{ (Request::is('account/profile') ? ' class="active"' : '') }}><a href="{{ route('profile') }}"><i class="icon-user"></i> {{Lang::get('frontend/menu.user.submenus.profile')}}</a></li>
-										<li class="divider"></li>
-										<li><a href="{{ route('logout') }}"><i class="icon-off"></i> {{Lang::get('frontend/menu.user.submenus.logout')}}</a></li>
-									</ul>
-								</li>
-								@else
-								<li {{ (Request::is('auth/signin') ? 'class="active"' : '') }}><a href="{{ route('signin') }}">{{Lang::get('frontend/menu.signin')}}</a></li>
-								<li {{ (Request::is('auth/signup') ? 'class="active"' : '') }}><a href="{{ route('signup') }}">{{Lang::get('frontend/menu.signup')}}</a></li>
-								@endif
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+      @include('frontend/layouts/_navbar')
 
 			<!-- Notifications -->
 			@include('notifications')
@@ -103,9 +62,7 @@
 			<hr />
 
 			<!-- Footer -->
-			<footer>
-				<p>{{Lang::get('commons.copyright')}}</p>
-			</footer>
+      @include('frontend/layouts/_footer')
 		</div>
 
 		<!-- Javascripts
